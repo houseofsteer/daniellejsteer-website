@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Danielle Steer</title>
+<meta name="description" content="Danielle Steer builds operating systems. Capital allocation at Tundra Ventures, a medical device ecosystem at Avio, and the programs and teams who run them.">
+
+<!-- ============================================================
+     REMOVE THIS LINE BEFORE LAUNCH.
+     While the site is previewing on github.io, noindex keeps it
+     out of Google so the staging URL never competes with
+     daniellejsteer.com in search results. Delete the meta tag
+     below on the day you point the real domain here.
+     ============================================================ -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Tundra Ventures palette, canonical */
+    --tv-charcoal:#27343A;
+    --tv-teal-deep:#375F6D;
+    --tv-teal-muted:#5B8A93;
+    --tv-aqua-pale:#BEE5E7;
+    --tv-offwhite:#E8EDF2;
+    --tv-orange:#FF9D27;
+    --tv-white:#FFFFFF;
+
+    --border-subtle:rgba(39,52,58,.12);
+    --border-on-dark:rgba(255,255,255,.16);
+
+    --font-sans:'Barlow','Helvetica Neue',Arial,sans-serif;
+
+    --tracking-label:.12em;
+    --tracking-tight:-.01em;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--tv-offwhite);
+    color:var(--tv-charcoal);
+    font-family:var(--font-sans);
+    font-size:17px;
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3{
+    font-weight:900;
+    letter-spacing:var(--tracking-tight);
+    line-height:1.05;
+    margin:0;
+  }
+
+  a{color:inherit;}
+
+  .wrap{
+    margin:0 auto;
+    max-width:1100px;
+    padding:0 32px;
+  }
+
+  .narrow{max-width:820px;}
+
+  section{padding:96px 0;}
+
+  .sec-light{background:var(--tv-offwhite);color:var(--tv-charcoal);}
+  .sec-teal{background:var(--tv-teal-deep);color:var(--tv-white);}
+  .sec-charcoal{background:var(--tv-charcoal);color:var(--tv-white);}
+
+  .eyebrow{
+    color:var(--tv-orange);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:var(--tracking-label);
+    line-height:1;
+    margin:0 0 18px;
+    text-transform:uppercase;
+  }
+
+  .rule{
+    border:0;
+    border-top:2px solid var(--tv-orange);
+    margin:22px 0 28px;
+    width:64px;
+  }
+
+  /* ---------- masthead ---------- */
+
+  .masthead{
+    background:var(--tv-offwhite);
+    border-bottom:1px solid var(--border-subtle);
+    position:sticky;
+    top:0;
+    z-index:20;
+  }
+
+  .masthead .wrap{
+    align-items:center;
+    display:flex;
+    gap:24px;
+    justify-content:space-between;
+    padding-bottom:18px;
+    padding-top:18px;
+  }
+
+  .lockup{
+    align-items:center;
+    display:flex;
+    gap:11px;
+    text-decoration:none;
+  }
+
+  .lockup svg{display:block;height:28px;width:auto;}
+
+  .lockup-name{
+    font-size:15px;
+    font-weight:900;
+    letter-spacing:.14em;
+    line-height:1.05;
+    text-transform:uppercase;
+  }
+
+  .masthead nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:26px;
+  }
+
+  .masthead nav a{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:var(--tracking-label);
+    text-decoration:none;
+    text-transform:uppercase;
+    transition:color .18s ease;
+  }
+
+  .masthead nav a:hover{color:var(--tv-teal-deep);}
+
+  /* ---------- hero ---------- */
+
+  .hero{
+    background:var(--tv-charcoal);
+    color:var(--tv-white);
+    padding:68px 0 0;
+  }
+
+  .hero-grid{
+    align-items:center;
+    display:grid;
+    gap:56px;
+    grid-template-columns:1.45fr 1fr;
+  }
+
+  .portrait-wrap{
+    margin:0 0 0 auto;
+    max-width:400px;
+    width:100%;
+  }
+
+  .portrait{
+    aspect-ratio:4/5;
+    border:1px solid var(--border-on-dark);
+    display:block;
+    max-height:54vh;
+    object-fit:cover;
+    object-position:50% 20%;
+    width:100%;
+  }
+
+  .portrait-wrap figcaption{
+    color:var(--tv-aqua-pale);
+    font-size:11.5px;
+    font-weight:300;
+    letter-spacing:.02em;
+    margin-top:11px;
+    opacity:.7;
+    text-align:right;
+  }
+
+  .hero h1{
+    font-size:clamp(42px,6.4vw,72px);
+    margin-bottom:24px;
+    text-transform:uppercase;
+  }
+
+  .hero p{
+    color:var(--tv-aqua-pale);
+    font-size:clamp(18px,2.2vw,23px);
+    font-weight:300;
+    margin:0;
+    max-width:720px;
+  }
+
+  .pipes{
+    border-top:1px solid var(--border-on-dark);
+    color:var(--tv-aqua-pale);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.1em;
+    margin:52px 0 0;
+    padding-top:26px;
+    text-transform:uppercase;
+  }
+
+  .hero-bar{
+    background:var(--tv-orange);
+    color:var(--tv-charcoal);
+    margin-top:52px;
+    padding:22px 0;
+  }
+
+  .hero-bar .wrap{
+    align-items:baseline;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 22px;
+    justify-content:space-between;
+  }
+
+  .hero-bar strong{
+    font-size:14px;
+    font-weight:900;
+    letter-spacing:var(--tracking-label);
+    text-transform:uppercase;
+  }
+
+  .hero-bar span{font-size:15px;font-weight:500;}
+
+  /* ---------- now ---------- */
+
+  .roles{
+    display:grid;
+    gap:1px;
+    grid-template-columns:repeat(3,1fr);
+    margin-top:48px;
+  }
+
+  .role{
+    background:rgba(255,255,255,.05);
+    border:1px solid var(--border-on-dark);
+    padding:36px 32px;
+  }
+
+  .role .label{
+    color:var(--tv-orange);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:var(--tracking-label);
+    margin-bottom:14px;
+    text-transform:uppercase;
+  }
+
+  .role h3{font-size:25px;margin-bottom:10px;}
+
+  .role p{
+    color:var(--tv-aqua-pale);
+    font-size:15.5px;
+    font-weight:300;
+    margin:0;
+  }
+
+  /* ---------- stats ---------- */
+
+  .stats{
+    display:grid;
+    gap:56px 40px;
+    grid-template-columns:repeat(3,1fr);
+    margin-top:56px;
+  }
+
+  .stat .num{
+    color:var(--tv-orange);
+    font-size:clamp(56px,8vw,96px);
+    font-weight:900;
+    letter-spacing:var(--tracking-tight);
+    line-height:1;
+  }
+
+  .stat .lab{
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:var(--tracking-label);
+    margin-top:12px;
+    text-transform:uppercase;
+  }
+
+  /* ---------- experience ---------- */
+
+  .entry{
+    border-top:1px solid var(--border-subtle);
+    display:grid;
+    gap:16px 48px;
+    grid-template-columns:230px 1fr;
+    padding:44px 0;
+  }
+
+  .entry:last-of-type{border-bottom:1px solid var(--border-subtle);}
+
+  .entry .meta .org{
+    font-size:21px;
+    font-weight:900;
+    letter-spacing:var(--tracking-tight);
+    line-height:1.15;
+  }
+
+  .entry .meta .years{
+    color:var(--tv-teal-deep);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:var(--tracking-label);
+    margin-top:8px;
+    text-transform:uppercase;
+  }
+
+  .entry .body p{margin:0 0 14px;}
+
+  .entry .body p:last-child{margin-bottom:0;}
+
+  /* triangle bullets */
+  .tv-list{list-style:none;margin:0;padding:0;}
+
+  .tv-list li{
+    line-height:1.6;
+    margin-bottom:11px;
+    padding-left:23px;
+    position:relative;
+  }
+
+  .tv-list li::before{
+    border-bottom:6px solid transparent;
+    border-left:9px solid var(--tv-orange);
+    border-top:6px solid transparent;
+    content:'';
+    height:0;
+    left:0;
+    position:absolute;
+    top:.52em;
+    width:0;
+  }
+
+  /* ---------- tracks ---------- */
+
+  .tracks{
+    display:grid;
+    gap:1px;
+    grid-template-columns:repeat(3,1fr);
+    margin-top:48px;
+  }
+
+  .track{
+    background:var(--tv-white);
+    border:1px solid var(--border-subtle);
+    padding:38px 32px;
+  }
+
+  .track h3{
+    color:var(--tv-teal-deep);
+    font-size:20px;
+    margin-bottom:14px;
+  }
+
+  .track p{font-size:15.5px;margin:0;}
+
+  .example{
+    background:var(--tv-white);
+    border-left:3px solid var(--tv-orange);
+    margin-top:48px;
+    padding:30px 34px;
+  }
+
+  .example h3{
+    color:var(--tv-teal-deep);
+    font-size:20px;
+    margin:0 0 10px;
+  }
+
+  .example p:last-child{margin:0;}
+
+  .waitlist{
+    font-size:17px;
+    margin:52px 0 0;
+  }
+
+  /* ---------- cta ---------- */
+
+  .btn{
+    background:var(--tv-orange);
+    color:var(--tv-charcoal);
+    display:inline-block;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:var(--tracking-label);
+    margin-top:32px;
+    padding:17px 30px;
+    text-decoration:none;
+    text-transform:uppercase;
+    transition:opacity .18s ease;
+  }
+
+  .btn:hover{opacity:.86;}
+
+  .btn-ghost{
+    background:transparent;
+    border:1px solid var(--tv-orange);
+    color:var(--tv-orange);
+  }
+
+  /* ---------- footer ---------- */
+
+  .affiliation{
+    background:var(--tv-teal-deep);
+    padding:34px 0;
+    text-align:center;
+  }
+
+  .affiliation img{height:22px;width:auto;}
+
+  .affiliation .note{
+    color:var(--tv-aqua-pale);
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:var(--tracking-label);
+    margin-top:14px;
+    text-transform:uppercase;
+  }
+
+  footer{
+    background:var(--tv-charcoal);
+    color:var(--tv-white);
+    padding:56px 0;
+  }
+
+  footer a{color:var(--tv-aqua-pale);}
+
+  .foot-row{
+    align-items:center;
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px 32px;
+    justify-content:space-between;
+  }
+
+  .foot-tag{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:var(--tracking-label);
+    text-transform:uppercase;
+  }
+
+  .cta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+
+  @media (max-width:900px){
+    .roles,.stats,.tracks,.hero-grid{grid-template-columns:1fr;}
+    .stats{gap:40px;}
+    .entry{grid-template-columns:1fr;}
+    section{padding:72px 0;}
+    .hero{padding-top:72px;}
+    .hero-grid{gap:44px;}
+    .portrait{max-width:380px;}
+  }
+
+  @media (max-width:560px){
+    .wrap{padding:0 20px;}
+    .masthead nav{gap:16px;}
+    .masthead nav a{font-size:11px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="lockup" href="#top">
+      <svg viewBox="0 0 47 56" aria-hidden="true" focusable="false">
+        <path fill="#FF9D27" d="M26.99,31.64l-6.86-11.73,10.77.1,6.14-10.96-23.23.07L8.47,0C5.22,2.35,2.32,5.17,0,8.72l26.99,46.67,19.1-33.13-13.62-.08-5.48,9.47Z"/>
+      </svg>
+      <span class="lockup-name">Danielle<br>Steer</span>
+    </a>
+    <nav>
+      <a href="#now">Now</a>
+      <a href="#experience">Experience</a>
+      <a href="#building">Building</a>
+      <a href="#advising">Advising</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ───────────────────────── hero ───────────────────────── -->
+
+<div class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Strategy and operations</p>
+      <h1>I build operating<br>systems.</h1>
+      <p>Capital allocation at Tundra Ventures. A medical device ecosystem at Avio. The programs and the teams who run them. Most people are either strategic thinkers or operational executors. I'm the rare professional who excels at both.</p>
+    </div>
+    <figure class="portrait-wrap">
+      <img class="portrait" src="assets/danielle-steer.jpg" alt="Danielle Steer" width="1200" height="1603">
+      <figcaption>Portrait by Bethany Birnie</figcaption>
+    </figure>
+  </div>
+  <div class="wrap">
+    <p class="pipes">Venture&nbsp; |&nbsp; AI&nbsp;enablement&nbsp; |&nbsp; Operations&nbsp; |&nbsp; Program&nbsp;design</p>
+  </div>
+  <div class="hero-bar">
+    <div class="wrap">
+      <strong>Danielle Steer</strong>
+      <span>Chief of Staff at Avio MedTech. Co-founding GP at Tundra Ventures. Founder of Committed.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ───────────────────────── now ───────────────────────── -->
+
+<section class="sec-teal" id="now">
+  <div class="wrap">
+    <p class="eyebrow">Now</p>
+    <h2 style="font-size:clamp(30px,4.4vw,48px);">What I am working on</h2>
+    <hr class="rule">
+
+    <div class="roles">
+      <div class="role">
+        <div class="label">Primary role</div>
+        <h3>Avio MedTech</h3>
+        <p>Chief of Staff to Morgan Evans. Bringing AI into how a fast-growing consulting practice runs, and standing up the new medical device ventures coming out of it.</p>
+      </div>
+      <div class="role">
+        <div class="label">Venture</div>
+        <h3>Tundra Ventures</h3>
+        <p>Managing Director and co-founding GP. Pre-seed and early-stage investing out of Minnesota across wealth, health, and resilience.</p>
+      </div>
+      <div class="role">
+        <div class="label">Building</div>
+        <h3>Committed</h3>
+        <p>A membership community for women moving from angel investing into fund investing as Limited Partners.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── stats ───────────────────────── -->
+
+<section class="sec-charcoal">
+  <div class="wrap">
+    <p class="eyebrow">By the numbers</p>
+    <h2 style="font-size:clamp(28px,4vw,42px);">Fifteen years of building</h2>
+    <hr class="rule">
+
+    <div class="stats">
+      <div class="stat">
+        <div class="num">2,000+</div>
+        <div class="lab">Companies evaluated at Tundra</div>
+      </div>
+      <div class="stat">
+        <div class="num">300%</div>
+        <div class="lab">Increase in evaluation throughput</div>
+      </div>
+      <div class="stat">
+        <div class="num">77</div>
+        <div class="lab">Companies accelerated at Lunar</div>
+      </div>
+      <div class="stat">
+        <div class="num">$235M</div>
+        <div class="lab">Economic impact generated</div>
+      </div>
+      <div class="stat">
+        <div class="num">600+</div>
+        <div class="lab">Jobs created</div>
+      </div>
+      <div class="stat">
+        <div class="num">98</div>
+        <div class="lab">Net promoter score</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── experience ───────────────────────── -->
+
+<section class="sec-light" id="experience">
+  <div class="wrap narrow">
+    <p class="eyebrow">Portfolio of experience</p>
+    <h2 style="font-size:clamp(30px,4.4vw,48px);color:var(--tv-teal-deep);">Where I have done this</h2>
+    <hr class="rule">
+
+    <div class="entry">
+      <div class="meta">
+        <div class="org">Avio MedTech</div>
+        <div class="years">2026 to present</div>
+      </div>
+      <div class="body">
+        <p>Chief of Staff to Morgan Evans, a serial entrepreneur and medical device investor. She is building an ecosystem of companies designed to get better devices to patients faster than the standard playbook allows.</p>
+        <p>The work has two halves:</p>
+        <ul class="tv-list">
+          <li><strong>AI enablement.</strong> Putting AI into the daily operations of a fast-growing consulting practice, so the team can serve more startups improving the lives of patients while keeping costs reasonable.</li>
+          <li><strong>Company formation.</strong> Standing up several new ventures a year, designed AI-native from the first day rather than retrofitted once the process already hardened.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="meta">
+        <div class="org">Tundra Ventures</div>
+        <div class="years">2021 to present</div>
+      </div>
+      <div class="body">
+        <p>Early-stage funds tend to operate like artisan shops when they need to function like scalable platforms. I built the systems that changed that.</p>
+        <ul class="tv-list">
+          <li>Over 2,000 companies evaluated, 13 funded</li>
+          <li>Evaluation throughput up 300% with overhead cut by half</li>
+          <li>Deal flow, diligence, and LP reporting frameworks still in use</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="meta">
+        <div class="org">Lunar Startups</div>
+        <div class="years">2018 to 2023</div>
+      </div>
+      <div class="body">
+        <p>Co-founded Minnesota's first inclusive accelerator, built for founders the traditional startup ecosystem was never designed to serve.</p>
+        <ul class="tv-list">
+          <li>77 companies accelerated over five years</li>
+          <li>$235M in economic impact and more than 600 jobs created</li>
+          <li>Net promoter score of 98</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── building ───────────────────────── -->
+
+<section class="sec-teal" id="building">
+  <div class="wrap narrow">
+    <p class="eyebrow">Building</p>
+    <h2 style="font-size:clamp(30px,4.4vw,48px);">Committed</h2>
+    <hr class="rule">
+    <p style="font-size:19px;font-weight:300;max-width:680px;">Women already allocate capital with skill. What has been missing is the path from writing angel checks into fund investing, where the math works better and the time cost is lower. Committed is a membership community for accredited women making that move, with the frameworks to evaluate funds independently and the peers to do it alongside.</p>
+    <a class="btn btn-ghost" href="https://thecommitted.world">Visit Committed</a>
+  </div>
+</section>
+
+<!-- ───────────────────────── advising ───────────────────────── -->
+
+<section class="sec-light" id="advising">
+  <div class="wrap">
+    <p class="eyebrow">Advising</p>
+    <h2 style="font-size:clamp(30px,4.4vw,48px);color:var(--tv-teal-deep);">How I work with organizations</h2>
+    <hr class="rule">
+    <p style="max-width:700px;">I work with impact investors and funds, ecosystem builders, foundations, and family offices. Three shapes, depending on what the work needs.</p>
+
+    <div class="tracks">
+      <div class="track">
+        <h3>Customer Listening &amp; Program Design</h3>
+        <p>A collaborative listening process with founders and stakeholders, producing a program or fund design that people actually want to use and that fits your strategy and capacity.</p>
+      </div>
+      <div class="track">
+        <h3>Strategy-to-Operations Sprint</h3>
+        <p>A focused sprint that turns strategic ambition into a 90-day and 12-month roadmap of concrete moves your team can actually make.</p>
+      </div>
+      <div class="track">
+        <h3>Embedded Operator &amp; Facilitator</h3>
+        <p>Short-term embedded support through design and implementation, structured so your team owns the work when I step out.</p>
+      </div>
+    </div>
+
+    <div class="example">
+      <p class="eyebrow">Recent engagement</p>
+      <h3>Proofing Station</h3>
+      <p>Impact investing consultant on a fixed-term engagement through Food Works Group, 2025 to 2026. Designed the program and fund strategy for a Midwest catalytic capital initiative in food and agriculture.</p>
+    </div>
+
+    <p class="waitlist">Engagements are limited.</p>
+    <a class="btn" href="mailto:danielle@houseofsteer.com?subject=Waitlist">Join the waitlist</a>
+  </div>
+</section>
+
+<!-- ───────────────────────── contact ───────────────────────── -->
+
+<section class="sec-charcoal" id="contact">
+  <div class="wrap narrow">
+    <p class="eyebrow">Contact</p>
+    <h2 style="font-size:clamp(30px,4.4vw,48px);">Let's Connect</h2>
+    <hr class="rule">
+    <p style="color:var(--tv-aqua-pale);font-weight:300;max-width:620px;">The best first message describes the problem you are stuck on, not the solution you think you need.</p>
+    <div class="cta-row">
+      <a class="btn" href="mailto:danielle@houseofsteer.com">danielle@houseofsteer.com</a>
+      <a class="btn" href="https://linkedin.com/in/daniellejsteer">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<div class="affiliation">
+  <img src="assets/tundra-horizontal-reverse.svg" alt="Tundra Ventures">
+  <div class="note">Managing Director and co-founding GP</div>
+</div>
+
+<footer>
+  <div class="wrap foot-row">
+    <div class="foot-tag">Danielle Steer</div>
+    <div class="foot-tag">Systems Strategy &amp; AI Enabled Operations</div>
+    <div><a href="mailto:danielle@houseofsteer.com">danielle@houseofsteer.com</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

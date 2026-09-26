@@ -14,8 +14,7 @@ orange triangle bullets.
 - `assets/danielle-steer.jpg` — portrait by Bethany Birnie
 - `assets/tundra-horizontal-reverse.svg` — Tundra lockup, white, for the affiliation band
 
-## Before launch
+## Domain
 
-`index.html` carries a `noindex, nofollow` robots tag so the GitHub Pages
-preview stays out of search while the real domain still points at Lovable.
-**Delete that meta tag when daniellejsteer.com is pointed here.**
+Served at daniellejsteer.com via the `CNAME` file. DNS is managed at
+WordPress.com, which is the registrar; the apex points at GitHub Pages IPs.
